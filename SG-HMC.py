@@ -35,13 +35,3 @@ def SG_HMC(U, grad_U, x0, data, n_samples=1000, step_size=0.01, n_steps=10, mass
         samples.append(x.copy())
     
     return np.array(samples)
-
-if __name__ == '__main__':
-
-    # Ví dụ sử dụng SG-HMC để lấy mẫu từ phân phối Gaussian đơn giản
-    data = np.array([5.0])  # dữ liệu ví dụ
-    x0 = np.array([0.0])  # khởi tạo x ban đầu
-    samples = SG_HMC(U, grad_U, x0, data, n_samples=1000, step_size=0.01, n_steps=10)
-
-    # In ra một vài mẫu
-    print(samples[:10])
